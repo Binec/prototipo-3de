@@ -72,7 +72,7 @@ export default function OnePagerSite() {
           title: "Llanta 1",
           description:
             "Una silla de oficina ergonómica diseñada para máxima comodidad durante largas horas de trabajo. Cuenta con soporte lumbar ajustable y material de malla transpirable.",
-          modelUrl: "/models/llanta+de+tractor+3d.glb",
+          modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
             "Altura y apoyabrazos ajustables",
@@ -84,7 +84,7 @@ export default function OnePagerSite() {
           title: "Llanta 2",
           description:
             "Diseño de escritorio limpio y funcional con gestión de cables integrada y acabado duradero en madera de roble. Perfecto para oficinas en casa modernas.",
-          modelUrl: "/models/metal+ring+3d+model.glb",
+          modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
             "Construcción en roble sólido",
@@ -93,10 +93,10 @@ export default function OnePagerSite() {
           ],
         },
         {
-          title: "Llanta 3",
+          title: "Lanta 3",
           description:
             "Sofá modular versátil que puede configurarse en múltiples arreglos. Cuenta con tela premium y cojines de espuma viscoelástica.",
-          modelUrl: "/models/off-road+tire+3d+model (1).glb",
+          modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
             "Diseño modular con múltiples configuraciones",
