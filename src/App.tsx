@@ -71,7 +71,7 @@ export default function OnePagerSite() {
         {
           title: "Llanta 1",
           description:
-            "Una silla de oficina ergonómica diseñada para máxima comodidad durante largas horas de trabajo. Cuenta con soporte lumbar ajustable y material de malla transpirable.",
+            "Una silla de oficina ergonómica diseñada para máxima comodidad durante largass horas de trabajo. Cuenta con soporte lumbar ajustable y material de malla transpirable.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
