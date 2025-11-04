@@ -1,6 +1,7 @@
 {
   "name": "prototipo-3de",
   "version": "0.1.0",
+  "homepage": "https://binec.github.io/prototipo-3de",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
@@ -13,6 +14,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "typescript": "^5.9.3"
   }
 }
