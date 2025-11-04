@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 
 declare global {
@@ -18,10 +17,9 @@ export default function OnePagerSite() {
     phone: "",
     comment: "",
   });
-  const [currentPage, setCurrentPage] = useState("home"); // 'home' or 'catalogue'
+  const [currentPage, setCurrentPage] = useState("home");
   const [isDark, setIsDark] = useState<boolean>(true);
 
-  // Load saved theme once on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const saved = window.localStorage.getItem("theme");
@@ -31,7 +29,6 @@ export default function OnePagerSite() {
     }
   }, []);
 
-  // Apply theme to <html> for Tailwind dark variant compatibility
   useEffect(() => {
     if (typeof window !== "undefined") {
       const root = window.document.documentElement;
@@ -68,211 +65,211 @@ export default function OnePagerSite() {
 
   const productCategories = [
     {
-      name: "Furniture",
+      name: "Categoría 1",
       icon: "🪑",
       models: [
         {
-          title: "Modern Ergonomic Chair",
+          title: "Llanta 1",
           description:
-            "An ergonomic office chair designed for maximum comfort during long working hours. Features adjustable lumbar support and breathable mesh material.",
-          modelUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
+            "Una silla de oficina ergonómica diseñada para máxima comodidad durante largas horas de trabajo. Cuenta con soporte lumbar ajustable y material de malla transpirable.",
+          modelUrl: "/models/llanta+de+tractor+3d.glb",
           pdfUrl: "#",
           bullets: [
-            "Adjustable height and armrests",
-            "360° swivel base with smooth casters",
-            "High-density foam padding",
+            "Altura y apoyabrazos ajustables",
+            "Base giratoria 360° con ruedas suaves",
+            "Acolchado de espuma de alta densidad",
           ],
         },
         {
-          title: "Minimalist Desk",
+          title: "Llanta 2",
           description:
-            "Clean and functional desk design with integrated cable management and durable oak wood finish. Perfect for modern home offices.",
-          modelUrl: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
+            "Diseño de escritorio limpio y funcional con gestión de cables integrada y acabado duradero en madera de roble. Perfecto para oficinas en casa modernas.",
+          modelUrl: "/models/metal+ring+3d+model.glb",
           pdfUrl: "#",
           bullets: [
-            "Solid oak construction",
-            "Built-in cable management system",
-            "Water-resistant coating",
+            "Construcción en roble sólido",
+            "Sistema integrado de gestión de cables",
+            "Revestimiento resistente al agua",
           ],
         },
         {
-          title: "Modular Sofa System",
+          title: "Lanta 3",
           description:
-            "Versatile modular sofa that can be configured in multiple arrangements. Features premium fabric and memory foam cushions.",
-          modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
+            "Sofá modular versátil que puede configurarse en múltiples arreglos. Cuenta con tela premium y cojines de espuma viscoelástica.",
+          modelUrl: "/models/off-road+tire+3d+model (1).glb",
           pdfUrl: "#",
           bullets: [
-            "Modular design with multiple configurations",
-            "Removable, washable covers",
-            "Memory foam seat cushions",
+            "Diseño modular con múltiples configuraciones",
+            "Fundas removibles y lavables",
+            "Cojines de asiento de espuma viscoelástica",
           ],
         },
       ],
     },
     {
-      name: "Electronics",
+      name: "Electrónicos",
       icon: "📱",
       models: [
         {
-          title: "Smart Home Hub",
+          title: "Hub Inteligente para el Hogar",
           description:
-            "Central control unit for smart home ecosystems. Features voice control compatibility and seamless device integration.",
+            "Unidad de control central para ecosistemas de hogar inteligente. Cuenta con compatibilidad de control por voz e integración perfecta de dispositivos.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
           pdfUrl: "#",
           bullets: [
-            "Voice control compatible",
-            "Supports 100+ smart devices",
-            "Built-in security protocols",
+            "Compatible con control por voz",
+            "Soporta más de 100 dispositivos inteligentes",
+            "Protocolos de seguridad integrados",
           ],
         },
         {
-          title: "Wireless Earbuds",
+          title: "Audífonos Inalámbricos",
           description:
-            "Premium wireless earbuds with active noise cancellation and 30-hour battery life. Perfect for music and calls.",
+            "Audífonos inalámbricos premium con cancelación activa de ruido y 30 horas de duración de batería. Perfectos para música y llamadas.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           pdfUrl: "#",
           bullets: [
-            "Active noise cancellation",
-            "30-hour total battery life",
-            "IPX7 water resistance",
+            "Cancelación activa de ruido",
+            "30 horas de batería total",
+            "Resistencia al agua IPX7",
           ],
         },
         {
-          title: "Gaming Monitor",
+          title: "Monitor Gaming",
           description:
-            "27-inch 4K gaming monitor with 144Hz refresh rate and 1ms response time. Immersive gaming experience with HDR support.",
+            "Monitor gaming de 27 pulgadas 4K con tasa de refresco de 144Hz y tiempo de respuesta de 1ms. Experiencia de juego inmersiva con soporte HDR.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
-            "4K resolution with HDR",
-            "144Hz refresh rate",
-            "AMD FreeSync technology",
+            "Resolución 4K con HDR",
+            "Tasa de refresco de 144Hz",
+            "Tecnología AMD FreeSync",
           ],
         },
       ],
     },
     {
-      name: "Architecture",
+      name: "Arquitectura",
       icon: "🏛️",
       models: [
         {
-          title: "Modern Villa Design",
+          title: "Diseño de Villa Moderna",
           description:
-            "Contemporary villa featuring open floor plans, large glass windows, and sustainable building materials. Perfect for hillside locations.",
+            "Villa contemporánea con planos de planta abiertos, grandes ventanales de vidrio y materiales de construcción sostenibles. Perfecta para ubicaciones en colinas.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
           pdfUrl: "#",
           bullets: [
-            "Open concept floor plan",
-            "Energy-efficient design",
-            "Smart home integration",
+            "Plano de planta de concepto abierto",
+            "Diseño energéticamente eficiente",
+            "Integración de hogar inteligente",
           ],
         },
         {
-          title: "Commercial Office Tower",
+          title: "Torre de Oficinas Comercial",
           description:
-            "45-story commercial tower with LEED certification. Features advanced HVAC systems and panoramic city views.",
+            "Torre comercial de 45 pisos con certificación LEED. Cuenta con sistemas HVAC avanzados y vistas panorámicas de la ciudad.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           pdfUrl: "#",
           bullets: [
-            "LEED Platinum certified",
-            "Advanced HVAC systems",
-            "Panoramic elevator views",
+            "Certificado LEED Platino",
+            "Sistemas HVAC avanzados",
+            "Vistas panorámicas desde los ascensores",
           ],
         },
         {
-          title: "Sustainable Community Center",
+          title: "Centro Comunitario Sostenible",
           description:
-            "Community center designed with sustainability in mind. Features solar panels, rainwater harvesting, and green roofs.",
+            "Centro comunitario diseñado con sostenibilidad en mente. Cuenta con paneles solares, recolección de agua de lluvia y techos verdes.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
-            "Solar power generation",
-            "Rainwater harvesting system",
-            "Green roof installation",
+            "Generación de energía solar",
+            "Sistema de recolección de agua de lluvia",
+            "Instalación de techo verde",
           ],
         },
       ],
     },
     {
-      name: "Jewelry",
+      name: "Joyería",
       icon: "💎",
       models: [
         {
-          title: "Diamond Engagement Ring",
+          title: "Anillo de Compromiso de Diamantes",
           description:
-            "Exquisite engagement ring featuring a 2-carat center diamond with pave setting. Crafted in 18k white gold.",
+            "Exquisito anillo de compromiso con un diamante central de 2 quilates con engaste pavé. Elaborado en oro blanco de 18k.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
           pdfUrl: "#",
           bullets: [
-            "2-carat center diamond",
-            "18k white gold setting",
-            "Micro-pave diamond accents",
+            "Diamante central de 2 quilates",
+            "Engaste de oro blanco 18k",
+            "Acentos de diamantes micro-pavé",
           ],
         },
         {
-          title: "Luxury Sports Watch",
+          title: "Reloj Deportivo de Lujo",
           description:
-            "Automatic mechanical watch with chronograph function. Features sapphire crystal and 200m water resistance.",
+            "Reloj mecánico automático con función de cronógrafo. Cuenta con cristal de zafiro y resistencia al agua de 200m.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           pdfUrl: "#",
           bullets: [
-            "Automatic mechanical movement",
-            "Sapphire crystal glass",
-            "200m water resistance",
+            "Movimiento mecánico automático",
+            "Cristal de zafiro",
+            "Resistencia al agua de 200m",
           ],
         },
         {
-          title: "Pearl Necklace Collection",
+          title: "Colección de Collar de Perlas",
           description:
-            "Elegant pearl necklace featuring Akoya pearls with diamond clasp. Perfect for formal occasions and special events.",
+            "Elegante collar de perlas con perlas Akoya y cierre de diamantes. Perfecto para ocasiones formales y eventos especiales.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
-            "AAA grade Akoya pearls",
-            "Diamond-encrusted clasp",
-            "18-inch adjustable length",
+            "Perlas Akoya grado AAA",
+            "Cierre con incrustaciones de diamantes",
+            "Longitud ajustable de 18 pulgadas",
           ],
         },
       ],
     },
     {
-      name: "Automotive",
+      name: "Auto",
       icon: "🚗",
       models: [
         {
-          title: "Electric Sports Car",
+          title: "Auto Deportivo Eléctrico",
           description:
-            "High-performance electric sports car with 500-mile range and 0-60mph in 2.5 seconds. Futuristic design with advanced aerodynamics.",
+            "Auto deportivo eléctrico de alto rendimiento con autonomía de 500 millas y 0-60mph en 2.5 segundos. Diseño futurista con aerodinámica avanzada.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
           pdfUrl: "#",
           bullets: [
-            "500-mile electric range",
-            "0-60mph in 2.5 seconds",
-            "Advanced autonomous driving",
+            "Autonomía eléctrica de 500 millas",
+            "0-60mph en 2.5 segundos",
+            "Conducción autónoma avanzada",
           ],
         },
         {
-          title: "Luxury SUV",
+          title: "SUV de Lujo",
           description:
-            "Premium SUV combining luxury comfort with off-road capability. Features handcrafted interior and advanced safety systems.",
+            "SUV premium que combina comodidad de lujo con capacidad todoterreno. Cuenta con interior artesanal y sistemas de seguridad avanzados.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           pdfUrl: "#",
           bullets: [
-            "Handcrafted leather interior",
-            "Advanced terrain management",
-            "21-speaker audio system",
+            "Interior de cuero artesanal",
+            "Gestión avanzada de terreno",
+            "Sistema de audio de 21 altavoces",
           ],
         },
         {
-          title: "Urban Electric Scooter",
+          title: "Scooter Eléctrico Urbano",
           description:
-            "Compact electric scooter designed for urban commuting. Lightweight foldable design with 40-mile range.",
+            "Scooter eléctrico compacto diseñado para desplazamientos urbanos. Diseño ligero plegable con autonomía de 40 millas.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
-            "40-mile maximum range",
-            "Foldable for easy storage",
-            "App connectivity features",
+            "Autonomía máxima de 40 millas",
+            "Plegable para fácil almacenamiento",
+            "Funciones de conectividad por app",
           ],
         },
       ],
@@ -282,39 +279,39 @@ export default function OnePagerSite() {
       icon: "🏭",
       models: [
         {
-          title: "CNC Machine Prototype",
+          title: "Prototipo de Máquina CNC",
           description:
-            "High-precision CNC machine for industrial manufacturing. Features automated tool changing and real-time monitoring.",
+            "Máquina CNC de alta precisión para manufactura industrial. Cuenta con cambio automático de herramientas y monitoreo en tiempo real.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/Astronaut.glb",
           pdfUrl: "#",
           bullets: [
-            "5-axis precision machining",
-            "Automated tool changer",
-            "Real-time monitoring system",
+            "Mecanizado de precisión de 5 ejes",
+            "Cambiador automático de herramientas",
+            "Sistema de monitoreo en tiempo real",
           ],
         },
         {
-          title: "Robotic Assembly Arm",
+          title: "Brazo de Ensamblaje Robótico",
           description:
-            "Industrial robotic arm for assembly line automation. Programmable for multiple tasks with sub-millimeter accuracy.",
+            "Brazo robótico industrial para automatización de líneas de ensamblaje. Programable para múltiples tareas con precisión submilimétrica.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb",
           pdfUrl: "#",
           bullets: [
-            "6-axis movement capability",
-            "Sub-millimeter accuracy",
-            "Easy programming interface",
+            "Capacidad de movimiento de 6 ejes",
+            "Precisión submilimétrica",
+            "Interfaz de programación fácil",
           ],
         },
         {
-          title: "3D Printer Industrial",
+          title: "Impresora 3D Industrial",
           description:
-            "Large-scale industrial 3D printer capable of printing with multiple materials including metals and composites.",
+            "Impresora 3D industrial a gran escala capaz de imprimir con múltiples materiales incluyendo metales y compuestos.",
           modelUrl: "https://modelviewer.dev/shared-assets/models/RobotExpressive.glb",
           pdfUrl: "#",
           bullets: [
-            "Multi-material printing",
-            "Large build volume",
-            "High-temperature capability",
+            "Impresión multi-material",
+            "Gran volumen de construcción",
+            "Capacidad de alta temperatura",
           ],
         },
       ],
@@ -323,23 +320,23 @@ export default function OnePagerSite() {
 
   const services = [
     {
-      title: "3D Modeling",
-      description: "Professional 3D modeling services for products, architecture, and concepts.",
+      title: "Modelado 3D",
+      description: "Servicios profesionales de modelado 3D para productos, arquitectura y conceptos.",
       icon: "🎨",
     },
     {
-      title: "Rendering",
-      description: "Photo-realistic rendering and visualization for marketing and presentations.",
+      title: "Renderizado",
+      description: "Renderizado y visualización fotorrealista para marketing y presentaciones.",
       icon: "📸",
     },
     {
-      title: "Animation",
-      description: "Dynamic 3D animations to showcase your products in motion.",
+      title: "Animación",
+      description: "Animaciones 3D dinámicas para mostrar tus productos en movimiento.",
       icon: "🎬",
     },
     {
-      title: "Consulting",
-      description: "Expert consultation on 3D workflows and pipeline optimization.",
+      title: "Consultoría",
+      description: "Consultoría experta en flujos de trabajo 3D y optimización de procesos.",
       icon: "💡",
     },
   ];
@@ -364,7 +361,7 @@ export default function OnePagerSite() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for your message! We will get back to you soon.");
+    alert("¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.");
     setFormData({ name: "", email: "", phone: "", comment: "" });
   };
 
@@ -372,7 +369,7 @@ export default function OnePagerSite() {
     const [selectedCategory, setSelectedCategory] = useState(0);
     const [selectedModel, setSelectedModel] = useState(0);
     const [searchTerm, setSearchTerm] = useState("");
-    const [searchMode, setSearchMode] = useState("current"); // kept to preserve structure
+    const [searchMode, setSearchMode] = useState("current");
 
     const searchAllModels = (term: string) => {
       if (!term.trim()) return [] as Array<{
@@ -434,11 +431,11 @@ export default function OnePagerSite() {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Home
+            Inicio
           </button>
           <button
             onClick={onToggleTheme}
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
             className={
               isDark
                 ? "p-2 rounded-full bg-gray-800 border border-gray-700 text-yellow-300 hover:bg-gray-700 transition"
@@ -460,7 +457,7 @@ export default function OnePagerSite() {
 
         <div className="container mx-auto px-4 py-8 pt-12">
           <h1 className={isDark ? "text-4xl md:text-5xl font-bold text-center text-white mb-12" : "text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12"}>
-            3D Model Catalogue
+            Catálogo de Modelos 3D
           </h1>
 
           <div className="flex justify-center mb-12">
@@ -495,14 +492,14 @@ export default function OnePagerSite() {
               <div className={isDark ? "bg-gray-800 rounded-xl p-6 border border-gray-700 h-full" : "bg-white rounded-xl p-6 border border-gray-200 h-full"}>
                 <div className="mb-6">
                   <label htmlFor="search" className={isDark ? "block text-gray-300 font-medium mb-2" : "block text-gray-700 font-medium mb-2"}>
-                    Search All Models
+                    Buscar Todos los Modelos
                   </label>
                   <input
                     type="text"
                     id="search"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search across all categories..."
+                    placeholder="Buscar en todas las categorías..."
                     className={
                       isDark
                         ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white placeholder-gray-400"
@@ -511,7 +508,7 @@ export default function OnePagerSite() {
                   />
                   <div className="flex gap-2 mt-2">
                     <button onClick={() => setSearchTerm("")} className={isDark ? "text-xs text-gray-400 hover:text-gray-300 transition" : "text-xs text-gray-500 hover:text-gray-700 transition"}>
-                      Clear Search
+                      Limpiar Búsqueda
                     </button>
                   </div>
                 </div>
@@ -519,7 +516,7 @@ export default function OnePagerSite() {
                 {hasGlobalSearchResults && (
                   <div className="mb-6">
                     <h3 className={isDark ? "text-lg font-semibold text-white mb-3" : "text-lg font-semibold text-gray-900 mb-3"}>
-                      Search Results ({globalSearchResults.length})
+                      Resultados de Búsqueda ({globalSearchResults.length})
                     </h3>
                     <div className={isDark ? "space-y-3 max-h-64 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-700" : "space-y-3 max-h-64 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100"}>
                       {globalSearchResults.map((result, index) => (
@@ -555,10 +552,10 @@ export default function OnePagerSite() {
                   }
                 >
                   <h3 className={isDark ? "text-lg font-semibold text-white mb-3 sticky top-0 bg-gray-800 py-2" : "text-lg font-semibold text-gray-900 mb-3 sticky top-0 bg-white py-2"}>
-                    {productCategories[selectedCategory].name} Models
+                    Modelos de {productCategories[selectedCategory].name}
                     {!hasGlobalSearchResults && searchTerm && (
                       <span className="text-sm font-normal text-gray-400 ml-2">
-                        ({filteredModels.length} of {productCategories[selectedCategory].models.length})
+                        ({filteredModels.length} de {productCategories[selectedCategory].models.length})
                       </span>
                     )}
                   </h3>
@@ -582,12 +579,12 @@ export default function OnePagerSite() {
                       ))}
                       {filteredModels.length === 0 && searchTerm && (
                         <div className={isDark ? "text-gray-400 text-center py-4" : "text-gray-500 text-center py-4"}>
-                          No models found in this category.
+                          No se encontraron modelos en esta categoría.
                         </div>
                       )}
                       {filteredModels.length === 0 && !searchTerm && (
                         <div className={isDark ? "text-gray-400 text-center py-4" : "text-gray-500 text-center py-4"}>
-                          No models available.
+                          No hay modelos disponibles.
                         </div>
                       )}
                     </>
@@ -599,7 +596,6 @@ export default function OnePagerSite() {
             <div className="lg:col-span-6">
               <div className={isDark ? "bg-gray-800 rounded-xl p-6 border border-gray-700 h-full" : "bg-white rounded-xl p-6 border border-gray-200 h-full"}>
                 <div className={isDark ? "bg-gray-700 rounded-xl overflow-hidden border border-gray-600" : "bg-gray-100 rounded-xl overflow-hidden border border-gray-200"} style={{ height: "500px" }}>
-                  {/* @ts-ignore */}
                   <model-viewer
                     src={productCategories[selectedCategory].models[selectedModel].modelUrl}
                     alt={productCategories[selectedCategory].models[selectedModel].title}
@@ -613,7 +609,7 @@ export default function OnePagerSite() {
                 </div>
                 <div className="mt-4 text-center">
                   <div className={isDark ? "text-sm text-gray-400" : "text-sm text-gray-500"}>
-                    Currently viewing: <span className={isDark ? "text-white font-medium" : "text-gray-900 font-medium"}>{productCategories[selectedCategory].models[selectedModel].title}</span>
+                    Viendo actualmente: <span className={isDark ? "text-white font-medium" : "text-gray-900 font-medium"}>{productCategories[selectedCategory].models[selectedModel].title}</span>
                   </div>
                   <div className={isDark ? "text-xs text-gray-500 flex items-center justify-center gap-1 mt-1" : "text-xs text-gray-400 flex items-center justify-center gap-1 mt-1"}>
                     <span>{productCategories[selectedCategory].icon}</span>
@@ -637,7 +633,7 @@ export default function OnePagerSite() {
                 </p>
 
                 <div className="space-y-3 mb-8">
-                  <h4 className={isDark ? "text-lg font-semibold text-white mb-3" : "text-lg font-semibold text-gray-900 mb-3"}>Key Features:</h4>
+                  <h4 className={isDark ? "text-lg font-semibold text-white mb-3" : "text-lg font-semibold text-gray-900 mb-3"}>Características Principales:</h4>
                   {productCategories[selectedCategory].models[selectedModel].bullets.map((bullet, index) => (
                     <div key={index} className="flex items-start gap-3">
                       <svg className={isDark ? "w-4 h-4 text-blue-400 mt-1 flex-shrink-0" : "w-4 h-4 text-blue-500 mt-1 flex-shrink-0"} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -652,7 +648,7 @@ export default function OnePagerSite() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  Download PDF
+                  Descargar PDF
                 </button>
               </div>
             </div>
@@ -672,7 +668,7 @@ export default function OnePagerSite() {
               </p>
 
               <div className="space-y-3 mb-8">
-                <h4 className={isDark ? "text-lg font-semibold text-white mb-3" : "text-lg font-semibold text-gray-900 mb-3"}>Key Features:</h4>
+                <h4 className={isDark ? "text-lg font-semibold text-white mb-3" : "text-lg font-semibold text-gray-900 mb-3"}>Características Principales:</h4>
                 {productCategories[selectedCategory].models[selectedModel].bullets.map((bullet, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <svg className={isDark ? "w-4 h-4 text-blue-400 mt-1 flex-shrink-0" : "w-4 h-4 text-blue-500 mt-1 flex-shrink-0"} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -687,7 +683,7 @@ export default function OnePagerSite() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Download PDF
+                Descargar PDF
               </button>
             </div>
           </div>
@@ -722,32 +718,32 @@ export default function OnePagerSite() {
               onClick={() => setCurrentPage("home")}
               className={isDark ? "text-gray-300 hover:text-white transition font-medium cursor-pointer text-sm lg:text-base" : "text-gray-600 hover:text-gray-900 transition font-medium cursor-pointer text-sm lg:text-base"}
             >
-              Home
+              Inicio
             </button>
             <button
               onClick={() => scrollToSection("services")}
               className={isDark ? "text-gray-300 hover:text-white transition font-medium cursor-pointer text-sm lg:text-base" : "text-gray-600 hover:text-gray-900 transition font-medium cursor-pointer text-sm lg:text-base"}
             >
-              Services
+              Servicios
             </button>
             <button
               onClick={() => setCurrentPage("catalogue")}
               className={isDark ? "text-gray-300 hover:text-white transition font-medium cursor-pointer text-sm lg:text-base" : "text-gray-600 hover:text-gray-900 transition font-medium cursor-pointer text-sm lg:text-base"}
             >
-              Catalogue
+              Catálogo
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className={isDark ? "text-gray-300 hover:text-white transition font-medium cursor-pointer text-sm lg:text-base" : "text-gray-600 hover:text-gray-900 transition font-medium cursor-pointer text-sm lg:text-base"}
             >
-              Contact
+              Contacto
             </button>
           </div>
 
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsDark((prev) => !prev)}
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
               className={
                 isDark
                   ? "p-2 rounded-full bg-gray-700 border border-gray-600 text-yellow-300 hover:bg-gray-600 transition"
@@ -770,7 +766,7 @@ export default function OnePagerSite() {
               onClick={() => scrollToSection("contact")}
               className={isDark ? "md:hidden bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer text-sm font-medium" : "md:hidden bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer text-sm font-medium"}
             >
-              Contact
+              Contacto
             </button>
           </div>
         </div>
@@ -781,25 +777,25 @@ export default function OnePagerSite() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-center md:text-left">
               <h1 className={isDark ? "text-4xl md:text-6xl font-bold text-white mb-6" : "text-4xl md:text-6xl font-bold text-gray-900 mb-6"}>
-                Bringing Your
+                Dando Vida a Tus
                 <br />
-                3D Visions to Life
+                Visiones en 3D
               </h1>
               <p className={isDark ? "text-lg md:text-xl text-gray-300 mb-8" : "text-lg md:text-xl text-gray-600 mb-8"}>
-                Professional 3D modeling, rendering, and animation services for businesses and creators.
+                Servicios profesionales de modelado 3D, renderizado y animación para empresas y creadores.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <button
                   onClick={() => setCurrentPage("catalogue")}
                   className="bg-blue-600 text-white px-6 py-3 md:px-8 md:py-3 rounded-lg hover:bg-blue-700 transition text-center cursor-pointer text-sm md:text-base"
                 >
-                  View Full Catalogue
+                  Ver Catálogo Completo
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
                   className={isDark ? "border-2 border-gray-300 text-gray-300 px-6 py-3 md:px-8 md:py-3 rounded-lg hover:bg-gray-300 hover:text-gray-900 transition text-center cursor-pointer text-sm md:text-base" : "border-2 border-gray-400 text-gray-700 px-6 py-3 md:px-8 md:py-3 rounded-lg hover:bg-gray-200 hover:text-gray-900 transition text-center cursor-pointer text-sm md:text-base"}
                 >
-                  Get in Touch
+                  Contáctanos
                 </button>
               </div>
             </div>
@@ -815,7 +811,7 @@ export default function OnePagerSite() {
       <section id="services" className={isDark ? "py-16 bg-gray-800" : "py-16 bg-white"}>
         <div className="container mx-auto px-4">
           <h2 className={isDark ? "text-3xl md:text-4xl font-bold text-center text-white mb-12" : "text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12"}>
-            Our Services
+            Nuestros Servicios
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => (
@@ -839,7 +835,7 @@ export default function OnePagerSite() {
       <section id="catalogue" className={isDark ? "py-16 bg-gray-900" : "py-16 bg-gray-100"}>
         <div className="container mx-auto px-4">
           <h2 className={isDark ? "text-3xl md:text-4xl font-bold text-center text-white mb-12" : "text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12"}>
-            3D Catalogue Preview
+            Vista Previa del Catálogo 3D
           </h2>
 
           <div className={isDark ? "bg-gray-800 rounded-2xl shadow-xl p-6 md:p-8 border border-gray-700" : "bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-200"}>
@@ -872,7 +868,6 @@ export default function OnePagerSite() {
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="flex flex-col">
                 <div className={isDark ? "bg-gray-700 rounded-xl overflow-hidden border border-gray-600" : "bg-gray-100 rounded-xl overflow-hidden border border-gray-200"} style={{ height: "300px", minHeight: "300px" }}>
-                  {/* @ts-ignore */}
                   <model-viewer
                     src={productCategories[currentCategory].models[currentSlide].modelUrl}
                     alt={productCategories[currentCategory].models[currentSlide].title}
@@ -951,13 +946,13 @@ export default function OnePagerSite() {
                     <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Download PDF
+                    Descargar PDF
                   </button>
                   <button
                     onClick={() => setCurrentPage("catalogue")}
                     className="bg-green-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-green-700 transition inline-flex items-center gap-2 border border-green-500 cursor-pointer text-sm md:text-base"
                   >
-                    View Full Catalogue
+                    Ver Catálogo Completo
                   </button>
                 </div>
               </div>
@@ -969,7 +964,7 @@ export default function OnePagerSite() {
       <section id="contact" className={isDark ? "py-16 bg-gray-800" : "py-16 bg-white"}>
         <div className="container mx-auto px-4">
           <h2 className={isDark ? "text-3xl md:text-4xl font-bold text-center text-white mb-12" : "text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12"}>
-            Get in Touch
+            Contáctanos
           </h2>
 
           <div className="max-w-2xl mx-auto">
@@ -977,7 +972,7 @@ export default function OnePagerSite() {
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label htmlFor="name" className={isDark ? "block text-gray-300 font-medium mb-2" : "block text-gray-700 font-medium mb-2"}>
-                    Name
+                    Nombre
                   </label>
                   <input
                     type="text"
@@ -991,13 +986,13 @@ export default function OnePagerSite() {
                         ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white placeholder-gray-400"
                         : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900 placeholder-gray-400"
                     }
-                    placeholder="Your name"
+                    placeholder="Tu nombre"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className={isDark ? "block text-gray-300 font-medium mb-2" : "block text-gray-700 font-medium mb-2"}>
-                    Email
+                    Correo Electrónico
                   </label>
                   <input
                     type="email"
@@ -1011,14 +1006,14 @@ export default function OnePagerSite() {
                         ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white placeholder-gray-400"
                         : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900 placeholder-gray-400"
                     }
-                    placeholder="your.email@example.com"
+                    placeholder="tu.correo@ejemplo.com"
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="phone" className={isDark ? "block text-gray-300 font-medium mb-2" : "block text-gray-700 font-medium mb-2"}>
-                  Phone
+                  Teléfono
                 </label>
                 <input
                   type="tel"
@@ -1031,13 +1026,13 @@ export default function OnePagerSite() {
                       ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white placeholder-gray-400"
                       : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900 placeholder-gray-400"
                   }
-                  placeholder="Your phone number"
+                  placeholder="Tu número de teléfono"
                 />
               </div>
 
               <div>
                 <label htmlFor="comment" className={isDark ? "block text-gray-300 font-medium mb-2" : "block text-gray-700 font-medium mb-2"}>
-                  Comment
+                  Comentario
                 </label>
                 <textarea
                   id="comment"
@@ -1051,7 +1046,7 @@ export default function OnePagerSite() {
                       ? "w-full px-4 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white placeholder-gray-400"
                       : "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900 placeholder-gray-400"
                   }
-                  placeholder="Tell us about your project..."
+                  placeholder="Cuéntanos sobre tu proyecto..."
                 ></textarea>
               </div>
 
@@ -1059,7 +1054,7 @@ export default function OnePagerSite() {
                 type="submit"
                 className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium border border-blue-500 cursor-pointer"
               >
-                Send Message
+                Enviar Mensaje
               </button>
             </form>
           </div>
@@ -1068,7 +1063,7 @@ export default function OnePagerSite() {
 
       <footer className={isDark ? "bg-gray-900 text-white py-8 border-t border-gray-800" : "bg-gray-100 text-gray-700 py-8 border-t border-gray-200"}>
         <div className="container mx-auto px-4 text-center">
-          <p className={isDark ? "text-gray-400" : "text-gray-500"}>© 2024 3D Studio. All rights reserved.</p>
+          <p className={isDark ? "text-gray-400" : "text-gray-500"}>© 2024 Estudio 3D. Todos los derechos reservados.</p>
         </div>
       </footer>
     </div>
