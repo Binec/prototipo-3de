@@ -93,7 +93,7 @@ export default function OnePagerSite() {
           ],
         },
         {
-          title: "Lanta 3",
+          title: "Llanta 3",
           description:
             "Sofá modular versátil que puede configurarse en múltiples arreglos. Cuenta con tela premium y cojines de espuma viscoelástica.",
           modelUrl: "/models/off-road+tire+3d+model (1).glb",
