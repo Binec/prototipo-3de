@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/prototipo-3de/static/css/main.350dc7e8.css",
+    "main.js": "/prototipo-3de/static/js/main.8d731393.js",
+    "index.html": "/prototipo-3de/index.html",
+    "main.350dc7e8.css.map": "/prototipo-3de/static/css/main.350dc7e8.css.map",
+    "main.8d731393.js.map": "/prototipo-3de/static/js/main.8d731393.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.350dc7e8.css",
+    "static/js/main.8d731393.js"
+  ]
+}
