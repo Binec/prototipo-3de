@@ -1,8 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy React to GitHub Pages
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   workflow_dispatch:  # Permite ejecución manual
 
 jobs:
@@ -20,31 +20,26 @@ jobs:
         cache: 'npm'
     
     - name: Install dependencies
-      run: |
-        npm install
-        # Si falla, prueba con fuerza
-        npm install --force
+      run: npm ci  # Más confiable que npm install
     
-    - name: Build project
+    - name: Build React project
+      run: npm run build
+      
+    - name: Verify build files
       run: |
-        # Prueba diferentes scripts de build comunes
-        npm run build || npm run build:prod || npm run dist || echo "Build script not found, checking for build folder..."
+        echo "Contenido de la carpeta build:"
+        ls -la build/
+        echo "Verificando que index.html existe:"
+        ls build/index.html || echo "ERROR: index.html no encontrado"
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
         
-    - name: Check if build folder exists
-      run: |
-        if [ -d "build" ]; then
-          echo "Build folder found"
-          ls -la build/
-        elif [ -d "dist" ]; then
-          echo "Dist folder found"
-          ls -la dist/
-        else
-          echo "No build folder found, listing all files:"
-          ls -la
-        fi
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: './build'  # Carpeta que contiene los archivos estáticos
     
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build  # Cambia a ./dist si es necesario
+      id: deployment
+      uses: actions/deploy-pages@v2
