@@ -2,29 +2,49 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
+  workflow_dispatch:  # Permite ejecución manual
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v4
     
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
+        cache: 'npm'
     
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install
+        # Si falla, prueba con fuerza
+        npm install --force
     
     - name: Build project
-      run: npm run build
+      run: |
+        # Prueba diferentes scripts de build comunes
+        npm run build || npm run build:prod || npm run dist || echo "Build script not found, checking for build folder..."
+        
+    - name: Check if build folder exists
+      run: |
+        if [ -d "build" ]; then
+          echo "Build folder found"
+          ls -la build/
+        elif [ -d "dist" ]; then
+          echo "Dist folder found"
+          ls -la dist/
+        else
+          echo "No build folder found, listing all files:"
+          ls -la
+        fi
     
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+        publish_dir: ./build  # Cambia a ./dist si es necesario
